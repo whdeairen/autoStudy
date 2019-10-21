@@ -1,0 +1,36 @@
+{
+  "name": "电子科大网络学习平台自动学习、答题脚本",
+  "manifest_version": 2,
+  "version": "1.0.0",
+  "description": "电子科大网络学习平台自动学习、答题脚本",
+  "browser_action": {
+    "default_icon": "img/logo.png",
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://learning.uestcedu.com/*"
+      ],
+      "js": [
+        "js/lib/jquery321.min.js",
+        "js/lib/client.js",
+        "js/lib/study.js",
+        "js/lib/dowork.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "contextMenus", // 右键菜单
+    "notifications", // 通知
+    "webRequest", // web请求
+    "webRequestBlocking",
+    "storage", // 插件本地存储
+    "http://*/*", // 可以通过executeScript或者insertCSS访问的网站
+    "https://*/*" // 可以通过executeScript或者insertCSS访问的网站
+  ],
+  "homepage_url": "https://h5java.cn"
+}
